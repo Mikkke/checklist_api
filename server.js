@@ -1,6 +1,18 @@
-const app = require("express")();
-const port = 8080;
+require("dotenv").config({ path: __dirname + "/.env" });
 
-app.listen(8080, () => {
-  console.log(`listenning on port ${8080}`);
-});
+const server = require("express")();
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const morgan = require("morgan");
+
+//Route
+const mainRouter = require("./src/routes");
+server.use(mainRouter);
+
+//Middleware
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true }));
+server.use(cors);
+server.use(morgan("dev"));
+
+module.exports = server;
