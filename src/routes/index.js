@@ -1,8 +1,6 @@
 const mainRouter = require("express").Router();
-// const mainRouter = express.Router();
+const userRouter = require("./userRouter");
 
-mainRouter.get("/", (req, res) => {
-  res.status(200).json({ message: "salut" });
-});
+mainRouter.use("/user", userRouter);
 
 module.exports = mainRouter;

@@ -1,4 +1,4 @@
-require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config();
 
 module.exports = {
   development: {
@@ -6,7 +6,6 @@ module.exports = {
     password: process.env.DB_PASSWORD,
     database: "database_development_checklist",
     host: "127.0.0.1",
-    dialect: "mysql",
-    port: "8889",
+    dialect: "postgres",
   },
 };

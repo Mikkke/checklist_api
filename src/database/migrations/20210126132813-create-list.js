@@ -4,9 +4,20 @@ module.exports = {
     await queryInterface.createTable("Lists", {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        /*  autoIncrement: true, */
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+      },
+      idUSERS: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        foreignKey: true,
+        references: {
+          model: "Users",
+          key: "id",
+        },
       },
       name: {
         allowNull: false,
