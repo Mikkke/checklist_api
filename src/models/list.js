@@ -10,25 +10,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.List.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false,
-          as: "user",
-          foreignKey: "idUSERS",
-        },
+        as: "user",
+        foreignKey: "userId",
       });
 
       models.List.hasMany(models.Task, {
         as: "tasks",
-        foreignKey: "idLISTS",
+        foreignKey: "listId",
       });
     }
     s;
   }
   List.init(
     {
-      idUSERS: DataTypes.INTEGER,
+      userId: DataTypes.INTEGER,
       name: DataTypes.STRING,
-      date: DataTypes.STRING,
     },
     {
       sequelize,

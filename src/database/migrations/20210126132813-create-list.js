@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
-      idUSERS: {
+      userId: {
         allowNull: false,
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -23,10 +23,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      date: {
+      /* date: {
         allowNull: false,
         type: Sequelize.STRING,
-      },
+      }, */
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
