@@ -1,6 +1,12 @@
-const mainRouter = require("express").Router();
-const userRouter = require("./userRouter");
+const authController = require("../controller/authController");
+const router = require("express").Router();
+const { authMiddleware } = require("../middleware/auth");
 
-mainRouter.use("/user", userRouter);
+router.get("/", (req, res) => {
+  res.send("yoooo");
+});
 
-module.exports = mainRouter;
+router.post("/api/auth/signup", authMiddleware, authController.signUp);
+router.post("/api/auth/signin", authController.signIn);
+
+module.exports = router;

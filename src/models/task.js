@@ -9,12 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Task.hasMany(models.Task, {
-        foreignKey: "",
-        as: "",
-      });
-      Task.belongsTo(models.User, {
-        foreignKey: "",
+      Task.belongsTo(models.List, {
+        as: "task",
+        foreignKey: "idLISTS",
       });
     }
   }
@@ -23,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       statut: DataTypes.BOOLEAN,
       priority: DataTypes.STRING,
+      idLISTS: DataTypes.INTEGER,
     },
     {
       sequelize,

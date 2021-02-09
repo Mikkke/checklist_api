@@ -12,9 +12,17 @@ module.exports = (sequelize, DataTypes) => {
       models.List.belongsTo(models.User, {
         foreignKey: {
           allowNull: false,
+          as: "user",
+          foreignKey: "idUSERS",
         },
       });
+
+      models.List.hasMany(models.Task, {
+        as: "tasks",
+        foreignKey: "idLISTS",
+      });
     }
+    s;
   }
   List.init(
     {

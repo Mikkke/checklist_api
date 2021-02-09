@@ -9,6 +9,16 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
+      idLISTS: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        foreignKey: true,
+        references: {
+          model: "Lists",
+          key: "id",
+        },
+      },
       name: {
         allowNull: false,
         type: Sequelize.STRING,
