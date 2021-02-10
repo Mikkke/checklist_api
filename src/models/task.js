@@ -19,7 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       statut: DataTypes.BOOLEAN,
-      priority: DataTypes.STRING,
       listId: DataTypes.INTEGER,
     },
     {

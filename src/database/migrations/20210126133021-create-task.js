@@ -24,12 +24,8 @@ module.exports = {
         type: Sequelize.STRING,
       },
       statut: {
-        allowNull: true,
         type: Sequelize.BOOLEAN,
-      },
-      priority: {
-        allowNull: false,
-        type: Sequelize.STRING,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
